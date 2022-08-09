@@ -1,9 +1,20 @@
+import java.util.Arrays;
 
 public class test {
 
 	public static String accum(String s) {
-		System.out.println(s);
-		return null;
+		String[] arr = s.split("");
+		String str = "";
+
+		for (int i = 0; i < arr.length; i++) {
+			str += arr[i].toUpperCase();
+			for (int j = 0; j < i; j++) {
+				str += arr[i].toLowerCase();
+			}
+			str += "-";
+		}
+		str = str.substring(0, str.length() - 1);
+		return str;
 	}
 
 	public static void main(String[] args) {
